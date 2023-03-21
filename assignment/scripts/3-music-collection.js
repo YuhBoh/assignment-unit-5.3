@@ -17,16 +17,15 @@ return album;
 return collection;
 }
 
-console.log(addToCollection('Bob', 'Bob Song', 19));
-console.log(collection);
+console.log(addToCollection('Bob Song', 'Bob', 19));
 
 //3.//
 console.log('3.');
-console.log(addToCollection('Boub', 'Boub Song', 1442));
-console.log(addToCollection('Bab', 'Bab Song', 105));
-console.log(addToCollection('Beb', 'Beb Song', 985));
-console.log(addToCollection('Bib', 'Bib Song', 4785));
-console.log(addToCollection('Bubb', 'Bubb Song', 0));
+console.log(addToCollection('Boub Song', 'Boub', 1442));
+console.log(addToCollection('Bab Song', 'Bab', 105));
+console.log(addToCollection('Beb Song', 'Beb', 985));
+console.log(addToCollection('Bib Song', 'Bib', 4785));
+console.log(addToCollection('Bubb Song', 'Bubb', 0));
 console.log(collection);
 
 //4.//
@@ -46,16 +45,35 @@ console.log(showCollection(collection));
 
 //6.//
 console.log('6.');
+
 function findByArtist(artist){
 let artistArray = [];
 
-for (album of collection){
-  if (artist === album.Artist){
-    artistArray.push(artist);
-  }
-  else {
-    return artistArray;
+for (i=0; i<collection.length; i++) {
+  if (artist === collection[i].Artist) {
+    artistArray.push(collection[i]);
   }
 }
-return
+return artistArray; //return HAS TO BE OUTSIDE FOR CODE BLOCK
 }
+
+console.log(findByArtist('Bib'));
+console.log(findByArtist('Schloop'));
+
+//7.//
+console.log('7.');
+
+console.log(findByArtist('Boub'));
+console.log(findByArtist('Bab'));
+console.log(findByArtist('Beb'));
+console.log(findByArtist('Bib'));
+console.log(findByArtist('Bubb'));
+
+console.log(findByArtist('Beep'));
+console.log(findByArtist('Boop'));
+console.log(findByArtist('Biip'));
+console.log(findByArtist('Buup'));
+console.log(findByArtist('Baap'));
+
+
+
