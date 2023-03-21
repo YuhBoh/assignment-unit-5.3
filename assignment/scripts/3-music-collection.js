@@ -40,4 +40,22 @@ for (album of collection){
 }
 }
 
+//5.//
+console.log('5.');
 console.log(showCollection(collection));
+
+//6.//
+console.log('6.');
+function findByArtist(artist){
+let artistArray = [];
+
+for (album of collection){
+  if (artist === album.Artist){
+    artistArray.push(artist);
+  }
+  else {
+    return artistArray;
+  }
+}
+return
+}
