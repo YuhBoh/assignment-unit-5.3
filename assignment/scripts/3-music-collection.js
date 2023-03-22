@@ -75,5 +75,70 @@ console.log(findByArtist('Biip'));
 console.log(findByArtist('Buup'));
 console.log(findByArtist('Baap'));
 
+//STRETCH GOALS//
+//8.//
+console.log('8.');
 
+//SEARCH CRITERIA OBJECT & SEARCH CRITERIA OBJECT
+let criteria = {
+  Artist: 'Ray Charles',
+  Year: '1957'};
+
+console.log(addToCollection('Blah', 'Ray Charles', '1957'));
+
+function search(criteria){
+  let emptyArray = [];
+
+  if (criteria == undefined){
+    return collection;
+  }
+
+  for (i=0; i<collection.length; i++) {
+    if (criteria.Artist === collection[i].Artist && criteria.Year === collection[i].Year) {
+      emptyArray.push(collection[i]);
+    }
+  }
+  return emptyArray;
+}
+
+console.log(search(criteria));
+console.log(search());
+
+//9.//
+console.log('9.');
+
+function addToCollection(title, artist, yearPublished, tracks){
+  album = {Title: title,
+           Artist: artist,
+           Year: yearPublished,
+           Tracks: tracks }
+
+    collection.push(album);
+    return album;
+  }
+
+function search(criteria, trackName){
+  let emptyArray = [];
+  
+  if (criteria == undefined){
+      return collection;
+    }
+  
+  for (i=0; i<collection.length; i++) {
+    if (criteria.Artist === collection[i].Artist && criteria.Year === collection[i].Year) {
+        emptyArray.push(collection[i]);
+      }
+    }
+  return emptyArray;
+}
+
+let tracks = [
+  {Name: "Bloo",
+   Duration: '5:00'
+  },
+  {Name: "Blor",
+   Duration: '6:00'}
+  ]
+
+  console.log(addToCollection('Bubb Song', 'Bubb', 0, tracks));
 
