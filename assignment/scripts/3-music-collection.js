@@ -111,7 +111,7 @@ function addToCollection(title, artist, yearPublished, tracks){
   album = {Title: title,
            Artist: artist,
            Year: yearPublished,
-           Tracks: tracks }
+          }
 
     collection.push(album);
     return album;
@@ -119,10 +119,14 @@ function addToCollection(title, artist, yearPublished, tracks){
 
 function search(criteria, trackName){
   let emptyArray = [];
-  
   if (criteria == undefined){
       return collection;
     }
+  else if (criteria.trackName === album.trackName){
+      for (i=0; i<collection.length; i++) {
+
+      }
+  }
   
   for (i=0; i<collection.length; i++) {
     if (criteria.Artist === collection[i].Artist && criteria.Year === collection[i].Year) {
