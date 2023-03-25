@@ -6,10 +6,11 @@ let collection = [];
 
 //2.//
 console.log('2.');
-function addToCollection(title, artist, yearPublished){
+function addToCollection(title, artist, yearPublished, tracks){
 album = {Title: title,
          Artist: artist,
-         Year: yearPublished};
+         Year: yearPublished,
+         Tracks: tracks};
 
 collection.push(album);
 
@@ -82,7 +83,8 @@ console.log('8.');
 //SEARCH CRITERIA OBJECT & SEARCH CRITERIA OBJECT
 let criteria = {
   Artist: 'Ray Charles',
-  Year: '1957'};
+  Year: '1957',
+   };
 
 console.log(addToCollection('Blah', 'Ray Charles', '1957'));
 
@@ -107,33 +109,25 @@ console.log(search());
 //9.//
 console.log('9.');
 
-function addToCollection(title, artist, yearPublished, tracks){
-  album = {Title: title,
-           Artist: artist,
-           Year: yearPublished,
-          }
-
-    collection.push(album);
-    return album;
-  }
-
 function search(criteria, trackName){
   let emptyArray = [];
   if (criteria == undefined){
       return collection;
     }
-  else if (criteria.trackName === album.trackName){
-      for (i=0; i<collection.length; i++) {
-
+  else if (trackName !== album.tracks){
+      for (let album of collection) {
+        for ( let track of album.Tracks){
+          if (trackName === album.Tracks){
+              emptyArray.push(album);
+          }
+        }
       }
-  }
-  
-  for (i=0; i<collection.length; i++) {
-    if (criteria.Artist === collection[i].Artist && criteria.Year === collection[i].Year) {
-        emptyArray.push(collection[i]);
-      }
+      return emptyArray;
     }
-  return emptyArray;
+  else {
+    if (criteria.Artist === )
+
+  }
 }
 
 let tracks = [
@@ -143,6 +137,4 @@ let tracks = [
   {Name: "Blor",
    Duration: '6:00'}
   ]
-
-  console.log(addToCollection('Bubb Song', 'Bubb', 0, tracks));
 
